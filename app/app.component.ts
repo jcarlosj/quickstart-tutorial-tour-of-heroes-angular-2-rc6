@@ -1,22 +1,11 @@
 // Imports del core de Angular 2 necesarios para este componente
 import { Component } from '@angular/core';
+import { OnInit } from '@angular/core';
 
 // Clases personalizadas de nuestra aplicación
 import { Hero } from './hero';
+import { HeroService } from './hero.service';
 
-// Array de datos constantes
-const HEROES: Hero[] = [
-  { id: 11, name: 'Mr. Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' }
-];
 
 // Decorador
 @Component({
@@ -81,16 +70,29 @@ const HEROES: Hero[] = [
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
-`]
+`],
+  providers: [ HeroService ]
 
 })
 
 // Clase principal del componente
-export class AppComponent {
+export class AppComponent implements OnInit {
   // Atributos
   title = 'Tour of Heroes';
-  heroes = HEROES;
+  heroes: Hero[];
   selectedHero: Hero; 
+
+  // Constructor
+  constructor( private heroService: HeroService ) { }
+
+  // Lifecycle Hooks
+  ngOnInit(): void {
+    this.getHeroes();
+  }
+
+  getHeroes(): void {
+        this.heroes = this.heroService.getHeroes();
+    } // stub
 
   // Methods
   onSelect(hero: Hero): void {
