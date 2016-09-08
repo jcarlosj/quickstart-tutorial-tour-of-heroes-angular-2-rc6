@@ -4,7 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 
 // Imports personalizados necesarios para este componente
-import { AppComponent }   from './app.component';
+import { AppComponent }        from './app.component';
+import { HeroDetailComponent } from './hero-detail.component';
 
 // Decorador
 @NgModule({
@@ -12,7 +13,10 @@ import { AppComponent }   from './app.component';
     BrowserModule,
     FormsModule 
   ],
-  declarations: [ AppComponent ],
+  declarations: [ 
+    AppComponent,
+    HeroDetailComponent 
+  ],
   bootstrap:    [ AppComponent ]
 })
 
