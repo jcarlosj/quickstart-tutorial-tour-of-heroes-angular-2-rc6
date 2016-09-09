@@ -5,7 +5,7 @@ import { HEROES } from './mock-heroes';
 
 @Injectable()   // <-- Emite metadatos acerca de nuestro componente
 export class HeroService {
-    getHeroes(): Hero[] {
-        return HEROES;
+    getHeroes(): Promise<Hero[]> {
+        return Promise.resolve(HEROES);
     } // stub
 }
