@@ -1,8 +1,11 @@
+// Imports del core de Angular 2 necesarios para este componente
 import { Injectable } from '@angular/core';
 
-import { Hero } from './hero';
+// Imports personalizados necesarios para este componente
+import { Hero }   from './hero';
 import { HEROES } from './mock-heroes';
 
+// Decorador
 @Injectable()   // <-- Emite metadatos acerca de nuestro componente
 export class HeroService {
 

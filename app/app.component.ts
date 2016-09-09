@@ -1,5 +1,7 @@
+// Imports del core de Angular 2 necesarios para este componente
 import { Component } from '@angular/core';
 
+// Decorador
 @Component({
   selector: 'my-app',
   template: `
@@ -9,6 +11,7 @@ import { Component } from '@angular/core';
  `
 })
 
+// Clase principal del componente
 export class AppComponent {
   title = 'Tour of Heroes';
 }

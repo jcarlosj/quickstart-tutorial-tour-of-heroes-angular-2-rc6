@@ -76,6 +76,7 @@ import { HeroService } from './hero.service';
 
 // Clase principal del componente
 export class HeroesComponent implements OnInit {
+  
   // Atributos
   heroes: Hero[];
   selectedHero: Hero; 
