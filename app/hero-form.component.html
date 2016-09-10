@@ -1,4 +1,5 @@
 {{diagnostic}}
+<form *ngIf="active">
 <div class="form-group">
   <label for="name">Name</label>
   <input type="text" class="form-control" id="name"
@@ -24,4 +25,6 @@
           [(ngModel)]="model.power" name="power">
     <option *ngFor="let p of powers" [value]="p">{{p}}</option>
   </select>
+  <button type="button" class="btn btn-default" (click)="newHero()">New Hero</button>
 </div>
+</form>
