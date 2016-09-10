@@ -21,6 +21,7 @@ export class HeroFormComponent {
       this.powers[0], 
       'Chuck Overstreet'
   );
+  
   submitted = false;
   
   // Metodos
